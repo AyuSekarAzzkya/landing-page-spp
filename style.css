@@ -1,4 +1,3 @@
-
 :root {
     --navy-primary: #0F172A;
     --navy-light: #1E293B;
@@ -216,4 +215,119 @@ body {
 ::selection {
     background: var(--orange-brand);
     color: var(--white);
+}
+
+.brand-logo i {
+    font-size: 1.8rem;
+    /* Ukuran ikon default */
+    transition: all 0.3s ease;
+}
+
+
+@media (max-width: 991px) {
+    .login-visual {
+        flex: 0 0 40%;
+        padding: 40px;
+    }
+
+    .login-visual h1 {
+        font-size: 2.5rem;
+    }
+
+    .brand-logo {
+        left: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .main-wrapper {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .login-visual {
+        flex: none;
+        width: 100%;
+        height: auto;
+        padding: 80px 24px 40px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .brand-logo {
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.1rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .brand-logo i {
+        font-size: 1.4rem;
+    }
+
+    .visual-content h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .visual-content p.lead {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .visual-content .row.g-4 {
+        margin-top: 10px;
+    }
+
+    .visual-content .col-md-6 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .login-auth {
+        flex: none;
+        width: 100%;
+        padding: 40px 24px;
+        background-color: #ffffff;
+        border-radius: 30px 30px 0 0;
+        margin-top: -30px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .auth-card {
+        max-width: 100% !important;
+    }
+
+    .auth-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .input-group-text,
+    .form-control {
+        padding: 12px;
+    }
+
+    .btn-login,
+    .btn-outline-back {
+        padding: 14px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 374px) {
+    .visual-content h1 {
+        font-size: 1.7rem;
+    }
+
+    .brand-logo span {
+        font-size: 0.9rem;
+    }
 }
