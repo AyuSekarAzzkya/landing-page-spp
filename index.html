@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-SPP SYSTEM - Transparansi Keuangan Sekolah</title>
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/graduation-cap.png">
+    <link rel="apple-touch-icon" href="https://img.icons8.com/fluency/180/graduation-cap.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
         rel="stylesheet">
@@ -14,6 +16,17 @@
 </head>
 
 <body id="mainBody" class="light-mode">
+
+    <div id="preloader"
+        class="fixed inset-0 z-[100] bg-[#F5F5F4] dark:bg-[#0B1120] flex items-center justify-center transition-opacity duration-700">
+        <div class="flex flex-col items-center">
+            <div class="w-16 h-16 border-4 border-orange-brand/20 border-t-orange-brand rounded-full animate-spin">
+            </div>
+            <span class="mt-4 font-black tracking-widest text-orange-brand animate-pulse uppercase text-xs">Loading
+                System...</span>
+        </div>
+    </div>
+
     <nav class="fixed w-full z-50 py-4 transition-all duration-300 backdrop-blur-xl border-b 
     bg-white/80 border-slate-200 text-slate-900 
     dark:bg-[#0F172A]/80 dark:border-white/5 dark:text-white">
@@ -33,9 +46,12 @@
                 <a href="#home" class="opacity-70 hover:opacity-100 hover:text-orange-brand transition-all">Home</a>
                 <a href="#workflow" class="opacity-70 hover:opacity-100 hover:text-orange-brand transition-all">Alur
                     Kerja</a>
+                <a href="#tentang"
+                    class="opacity-70 hover:opacity-100 hover:text-orange-brand transition-all">Tentang</a>
                 <a href="#portal" class="opacity-70 hover:opacity-100 hover:text-orange-brand transition-all">Portal</a>
                 <a href="#lokasi" class="opacity-70 hover:opacity-100 hover:text-orange-brand transition-all">Lokasi</a>
-                <a href="#contact" class="opacity-70 hover:opacity-100 hover:text-orange-brand transition-all">Kontak</a>
+                <a href="#contact"
+                    class="opacity-70 hover:opacity-100 hover:text-orange-brand transition-all">Kontak</a>
 
 
                 <button id="darkModeToggle"
@@ -65,6 +81,7 @@
                 class="flex flex-col font-bold text-[10px] uppercase tracking-[0.2em] bg-white dark:bg-[#0F172A] border-t dark:border-white/5 mt-4">
                 <a href="#home" class="mobile-link">Home</a>
                 <a href="#workflow" class="mobile-link">Alur Kerja</a>
+                <a href="#tentang" class="mobile-link">Tentang</a>
                 <a href="#portal" class="mobile-link">Portal</a>
                 <a href="#lokasi" class="mobile-link">Lokasi</a>
                 <div class="p-4">
@@ -261,6 +278,25 @@
         </div>
     </section>
 
+    <section class="py-20 bg-orange-brand text-white">
+        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-12 text-center">
+            <div>
+                <div class="text-5xl font-black mb-2">2.5K+</div>
+                <div class="text-xs font-bold uppercase tracking-[0.2em] opacity-80">Siswa Terdaftar</div>
+            </div>
+            <div>
+                <div class="text-5xl font-black mb-2">99.9%</div>
+                <div class="text-xs font-bold uppercase tracking-[0.2em] opacity-80">Data Aman Terverifikasi</div>
+            </div>
+            <div>
+                <div class="text-5xl font-black mb-2">
+                    < 5 Menit</div>
+                        <div class="text-xs font-bold uppercase tracking-[0.2em] opacity-80">Waktu Verifikasi Rata-rata
+                        </div>
+                </div>
+            </div>
+    </section>
+
     <hr class="border-slate-360">
 
     <section id="portal" class="py-32 section-main relative overflow-hidden">
@@ -305,7 +341,7 @@
                     <p class="text-slate-500 dark:text-slate-300 mb-10">Unggah bukti bayar, cek status, dan
                         riwayat tagihan kamu.</p>
                     <a href="login.html"
-                        class="w-full py-5 bg-navy group-hover:bg-orange-brand text-white text-center rounded-3xl font-black block transition-all uppercase tracking-widest text-xs">Login
+                        class="w-full py-5 bg-orange-brand group-hover:bg-orange-brand text-white text-center rounded-3xl font-black block transition-all uppercase tracking-widest text-xs">Login
                         Siswa</a>
                 </div>
             </div>

@@ -6,16 +6,16 @@
     --navy-deep: #0F172A;
 
 
-    --bg-main: #F5F5F4;      
-    --bg-sec: #E7E7E4;       
+    --bg-main: #F5F5F4;
+    --bg-sec: #E7E7E4;
     --bg-hero: linear-gradient(135deg, #0F172A 0%, #1E1B4B 100%);
-    
-    --text-primary: #0F172A; 
-    --text-muted: #57534E;   
-    
-    --card-bg: #FFFFFF;      
+
+    --text-primary: #0F172A;
+    --text-muted: #57534E;
+
+    --card-bg: #FFFFFF;
     --card-border: #E7E7E4;
-    
+
     --nav-bg: rgba(245, 245, 244, 0.8);
     --nav-text: #0F172A;
 
@@ -23,16 +23,16 @@
 }
 
 .dark-mode {
-    --bg-main: #0B1120;      
+    --bg-main: #0B1120;
     --bg-sec: #0F172A;
     --bg-hero: linear-gradient(135deg, #0B1120 0%, #0F172A 100%);
-    
+
     --text-primary: #F1F5F9;
     --text-muted: #94A3B8;
-    
+
     --card-bg: rgba(30, 41, 59, 0.5);
     --card-border: rgba(255, 255, 255, 0.1);
-    
+
     --nav-bg: rgba(11, 17, 32, 0.9);
     --nav-text: #F1F5F9;
 
@@ -83,7 +83,7 @@ nav {
 }
 
 #mobileMenu.show {
-    max-height: 500px; 
+    max-height: 500px;
     opacity: 1;
     border-bottom: 1px solid var(--card-border);
 }
@@ -99,21 +99,40 @@ nav {
     font-weight: bold;
 }
 
-.mobile-link:hover, .mobile-link:active {
+.mobile-link:hover,
+.mobile-link:active {
     background-color: var(--orange-brand);
     color: white !important;
 }
 
 
-.bg-orange-brand { background-color: var(--orange-brand) !important; }
-.text-orange-brand { color: var(--orange-brand) !important; }
-.border-orange-brand { border-color: var(--orange-brand) !important; }
+.bg-orange-brand {
+    background-color: var(--orange-brand) !important;
+}
 
-.section-main { background-color: var(--bg-main); }
-.section-sec { background-color: var(--bg-sec); }
-.hero-gradient { background: var(--bg-hero); }
+.text-orange-brand {
+    color: var(--orange-brand) !important;
+}
 
-.feature-card, .bg-white, #lokasi .group {
+.border-orange-brand {
+    border-color: var(--orange-brand) !important;
+}
+
+.section-main {
+    background-color: var(--bg-main);
+}
+
+.section-sec {
+    background-color: var(--bg-sec);
+}
+
+.hero-gradient {
+    background: var(--bg-hero);
+}
+
+.feature-card,
+.bg-white,
+#lokasi .group {
     background-color: var(--card-bg) !important;
     border: 1px solid var(--card-border) !important;
     transition: all .4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -132,15 +151,31 @@ nav {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
 }
-.animate-float { animation: float 6s ease-in-out infinite; }
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
 
 @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
+
 .scroll-container {
     display: flex;
     width: 200%;
@@ -148,10 +183,22 @@ nav {
 }
 
 @keyframes pulse-slow {
-    0%, 100% { transform: scale(1); opacity: 0.15; }
-    50% { transform: scale(1.1); opacity: 0.25; }
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.15;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.25;
+    }
 }
-.bg-orange-brand\/10 { animation: pulse-slow 8s infinite ease-in-out; }
+
+.bg-orange-brand\/10 {
+    animation: pulse-slow 8s infinite ease-in-out;
+}
 
 /* Map Theme */
 #lokasi iframe {
@@ -183,13 +230,26 @@ footer a::after {
     transition: width 0.3s ease;
 }
 
-footer a:hover::after { width: 100%; }
-footer a:hover { color: var(--orange-brand); }
+footer a:hover::after {
+    width: 100%;
+}
+
+footer a:hover {
+    color: var(--orange-brand);
+}
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.2); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
 }
+
 .fa-heart {
     animation: pulse 1.5s infinite;
     color: #ef4444;
@@ -197,11 +257,58 @@ footer a:hover { color: var(--orange-brand); }
 }
 
 /* Scrollbar */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--bg-main); }
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-main);
+}
+
 ::-webkit-scrollbar-thumb {
     background: var(--orange-brand);
     border-radius: 10px;
     border: 2px solid var(--bg-main);
 }
-::-webkit-scrollbar-thumb:hover { background: var(--orange-hover); }
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--orange-hover);
+}
+
+/* Pastikan tombol benar-benar melayang dan tidak mengganggu konten */
+.floating-wa {
+    position: fixed !important;
+    bottom: 32px !important;
+    right: 32px !important;
+    z-index: 9999 !important;
+}
+
+/* Di HP, perkecil sedikit agar tidak menutupi konten penting */
+@media (max-width: 768px) {
+    .floating-wa {
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 50px !important;
+        height: 50px !important;
+    }
+}
+
+#cursor-glow {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 111, 0, 0.082) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
+#theme-toggle:hover #cursor-glow {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
+}
+
+.rotate-icon {
+    transform: rotate(360deg) scale(1.2);
+}

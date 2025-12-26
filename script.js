@@ -1,7 +1,7 @@
 const body = document.getElementById("mainBody");
 const themeToggles = [
-    document.getElementById("darkModeToggle"),  
-    document.getElementById("darkModeToggleMobile") 
+    document.getElementById("darkModeToggle"),
+    document.getElementById("darkModeToggleMobile")
 ];
 
 // Fungsi untuk memperbarui semua icon tema (Moon/Sun)
@@ -25,12 +25,28 @@ if (savedTheme === "dark") {
 
 themeToggles.forEach(toggle => {
     if (!toggle) return;
+    
     toggle.addEventListener("click", () => {
-        body.classList.toggle("dark-mode");
-        const isDark = body.classList.contains("dark-mode");
-        
-        updateIcons(isDark);
-        localStorage.setItem("theme", isDark ? "dark" : "light");
+        // 1. Tambahkan animasi putar pada tombol yang diklik
+        const icon = toggle.querySelector('i');
+        if (icon) {
+            icon.style.transition = "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s";
+            icon.style.transform = "rotate(360deg) scale(0)";
+            icon.style.opacity = "0";
+        }
+
+        setTimeout(() => {
+            body.classList.toggle("dark-mode");
+            const isDark = body.classList.contains("dark-mode");
+            
+            updateIcons(isDark); 
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+
+            if (icon) {
+                icon.style.transform = "rotate(0deg) scale(1)";
+                icon.style.opacity = "1";
+            }
+        }, 250); 
     });
 });
 
@@ -41,10 +57,10 @@ const mobileLinks = document.querySelectorAll('.mobile-link');
 if (menuBtn && mobileMenu) {
     menuBtn.addEventListener('click', () => {
         const isHidden = mobileMenu.classList.contains('hidden');
-        
+
         if (isHidden) {
             mobileMenu.classList.remove('hidden');
-            setTimeout(() => mobileMenu.classList.add('show'), 10); 
+            setTimeout(() => mobileMenu.classList.add('show'), 10);
             menuBtn.querySelector('i').classList.replace('fa-bars', 'fa-times');
         } else {
             mobileMenu.classList.remove('show');
@@ -76,5 +92,22 @@ AOS.init({
     once: true,
     duration: 1000,
     easing: "ease-out-cubic",
-    disable: 'mobile' 
+    disable: 'mobile'
+});
+
+window.addEventListener('load', () => {
+    const loader = document.getElementById('preloader');
+    loader.classList.add('opacity-0');
+    setTimeout(() => {
+        loader.style.display = 'none';
+    }, 700);
+});
+
+const glow = document.createElement("div");
+glow.id = "cursor-glow";
+document.body.appendChild(glow);
+
+window.addEventListener("mousemove", (e) => {
+    glow.style.left = e.clientX + "px";
+    glow.style.top = e.clientY + "px";
 });
