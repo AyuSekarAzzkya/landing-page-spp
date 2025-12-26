@@ -1,16 +1,13 @@
-/* ==========================================================================
-   1. SETTING VARIABEL (WARNA & TEMA)
-   ========================================================================== */
 :root {
-    /* Brand Colors */
+
     --orange-brand: #F87B1B;
     --orange-hover: #e06a15;
     --orange-light: #FFBC85;
     --navy-deep: #0F172A;
 
-    /* Mode Terang (Light Mode) */
-    --bg-main: #F5F5F4;      /* Stone 100 */
-    --bg-sec: #E7E7E4;       /* Stone 200 */
+
+    --bg-main: #F5F5F4;      
+    --bg-sec: #E7E7E4;       
     --bg-hero: linear-gradient(135deg, #0F172A 0%, #1E1B4B 100%);
     
     --text-primary: #0F172A; 
@@ -25,7 +22,6 @@
     --map-filter: grayscale(0.2) contrast(1.1);
 }
 
-/* Mode Gelap (Dark Mode) */
 .dark-mode {
     --bg-main: #0B1120;      
     --bg-sec: #0F172A;
@@ -43,9 +39,7 @@
     --map-filter: grayscale(1) invert(90%) hue-rotate(180deg) brightness(0.9) contrast(1.2);
 }
 
-/* ==========================================================================
-   2. GLOBAL STYLES
-   ========================================================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -70,9 +64,6 @@ body {
     color: white;
 }
 
-/* ==========================================================================
-   3. NAVIGASI (DESKTOP & MOBILE)
-   ========================================================================== */
 nav {
     background-color: var(--nav-bg);
     border-bottom: 1px solid var(--card-border);
@@ -82,7 +73,7 @@ nav {
     -webkit-backdrop-filter: blur(12px);
 }
 
-/* Mobile Menu Logic */
+
 #mobileMenu {
     max-height: 0;
     opacity: 0;
@@ -92,7 +83,7 @@ nav {
 }
 
 #mobileMenu.show {
-    max-height: 500px; /* Sesuaikan dengan jumlah konten menu */
+    max-height: 500px; 
     opacity: 1;
     border-bottom: 1px solid var(--card-border);
 }
@@ -113,9 +104,7 @@ nav {
     color: white !important;
 }
 
-/* ==========================================================================
-   4. KOMPONEN UI & CARD
-   ========================================================================== */
+
 .bg-orange-brand { background-color: var(--orange-brand) !important; }
 .text-orange-brand { color: var(--orange-brand) !important; }
 .border-orange-brand { border-color: var(--orange-brand) !important; }
@@ -136,9 +125,6 @@ nav {
     box-shadow: 0 20px 25px -5px rgba(248, 123, 27, 0.15);
 }
 
-/* ==========================================================================
-   5. ANIMASI & VISUAL
-   ========================================================================== */
 .text-gradient {
     background: linear-gradient(to right, var(--orange-brand), var(--orange-light));
     -webkit-background-clip: text;
@@ -181,9 +167,6 @@ nav {
     filter: grayscale(0.5) invert(90%) hue-rotate(180deg) brightness(1);
 }
 
-/* ==========================================================================
-   6. FOOTER & SCROLLBAR
-   ========================================================================== */
 footer {
     background-color: var(--bg-main);
     border-top: 1px solid var(--card-border);
