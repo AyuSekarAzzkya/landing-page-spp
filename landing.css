@@ -1,0 +1,224 @@
+/* ==========================================================================
+   1. SETTING VARIABEL (WARNA & TEMA)
+   ========================================================================== */
+:root {
+    /* Brand Colors */
+    --orange-brand: #F87B1B;
+    --orange-hover: #e06a15;
+    --orange-light: #FFBC85;
+    --navy-deep: #0F172A;
+
+    /* Mode Terang (Light Mode) */
+    --bg-main: #F5F5F4;      /* Stone 100 */
+    --bg-sec: #E7E7E4;       /* Stone 200 */
+    --bg-hero: linear-gradient(135deg, #0F172A 0%, #1E1B4B 100%);
+    
+    --text-primary: #0F172A; 
+    --text-muted: #57534E;   
+    
+    --card-bg: #FFFFFF;      
+    --card-border: #E7E7E4;
+    
+    --nav-bg: rgba(245, 245, 244, 0.8);
+    --nav-text: #0F172A;
+
+    --map-filter: grayscale(0.2) contrast(1.1);
+}
+
+/* Mode Gelap (Dark Mode) */
+.dark-mode {
+    --bg-main: #0B1120;      
+    --bg-sec: #0F172A;
+    --bg-hero: linear-gradient(135deg, #0B1120 0%, #0F172A 100%);
+    
+    --text-primary: #F1F5F9;
+    --text-muted: #94A3B8;
+    
+    --card-bg: rgba(30, 41, 59, 0.5);
+    --card-border: rgba(255, 255, 255, 0.1);
+    
+    --nav-bg: rgba(11, 17, 32, 0.9);
+    --nav-text: #F1F5F9;
+
+    --map-filter: grayscale(1) invert(90%) hue-rotate(180deg) brightness(0.9) contrast(1.2);
+}
+
+/* ==========================================================================
+   2. GLOBAL STYLES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1), color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+::selection {
+    background-color: var(--orange-brand);
+    color: white;
+}
+
+/* ==========================================================================
+   3. NAVIGASI (DESKTOP & MOBILE)
+   ========================================================================== */
+nav {
+    background-color: var(--nav-bg);
+    border-bottom: 1px solid var(--card-border);
+    color: var(--nav-text);
+    transition: all 0.4s ease;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Mobile Menu Logic */
+#mobileMenu {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    background-color: var(--nav-bg);
+}
+
+#mobileMenu.show {
+    max-height: 500px; /* Sesuaikan dengan jumlah konten menu */
+    opacity: 1;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.mobile-link {
+    display: block;
+    padding: 1rem;
+    border-radius: 12px;
+    margin: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.mobile-link:hover, .mobile-link:active {
+    background-color: var(--orange-brand);
+    color: white !important;
+}
+
+/* ==========================================================================
+   4. KOMPONEN UI & CARD
+   ========================================================================== */
+.bg-orange-brand { background-color: var(--orange-brand) !important; }
+.text-orange-brand { color: var(--orange-brand) !important; }
+.border-orange-brand { border-color: var(--orange-brand) !important; }
+
+.section-main { background-color: var(--bg-main); }
+.section-sec { background-color: var(--bg-sec); }
+.hero-gradient { background: var(--bg-hero); }
+
+.feature-card, .bg-white, #lokasi .group {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--card-border) !important;
+    transition: all .4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.group:hover {
+    border-color: var(--orange-brand) !important;
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(248, 123, 27, 0.15);
+}
+
+/* ==========================================================================
+   5. ANIMASI & VISUAL
+   ========================================================================== */
+.text-gradient {
+    background: linear-gradient(to right, var(--orange-brand), var(--orange-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.scroll-container {
+    display: flex;
+    width: 200%;
+    animation: scroll 25s linear infinite;
+}
+
+@keyframes pulse-slow {
+    0%, 100% { transform: scale(1); opacity: 0.15; }
+    50% { transform: scale(1.1); opacity: 0.25; }
+}
+.bg-orange-brand\/10 { animation: pulse-slow 8s infinite ease-in-out; }
+
+/* Map Theme */
+#lokasi iframe {
+    filter: var(--map-filter);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#lokasi .group:hover iframe {
+    filter: grayscale(0) brightness(1);
+}
+
+.dark-mode #lokasi .group:hover iframe {
+    filter: grayscale(0.5) invert(90%) hue-rotate(180deg) brightness(1);
+}
+
+/* ==========================================================================
+   6. FOOTER & SCROLLBAR
+   ========================================================================== */
+footer {
+    background-color: var(--bg-main);
+    border-top: 1px solid var(--card-border);
+}
+
+footer a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--orange-brand);
+    transition: width 0.3s ease;
+}
+
+footer a:hover::after { width: 100%; }
+footer a:hover { color: var(--orange-brand); }
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+.fa-heart {
+    animation: pulse 1.5s infinite;
+    color: #ef4444;
+    display: inline-block;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-main); }
+::-webkit-scrollbar-thumb {
+    background: var(--orange-brand);
+    border-radius: 10px;
+    border: 2px solid var(--bg-main);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--orange-hover); }
