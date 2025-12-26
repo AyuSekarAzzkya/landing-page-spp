@@ -50,6 +50,13 @@ html {
     scroll-behavior: smooth;
 }
 
+body,
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     background-color: var(--bg-main);
     color: var(--text-primary);
